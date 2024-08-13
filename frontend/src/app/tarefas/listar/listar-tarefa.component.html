@@ -1,1 +1,49 @@
-<p>listar-tarefa works!</p>
+<h1>Tarefas</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+        <th>Tarefa</th>
+        <th>Concluída</th>
+        <th class="text-center" colspan="2">
+          <a [routerLink]="['/tarefas/cadastrar']"
+              class="btn btn-outline-success">
+              <i class="fa-solid fa-plus"></i> Nova
+          </a>
+       </th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <!-- 
+    Diretivas do Angular (ngFor, por exemplo): São bloco de códigos específicos que adicionam um 
+    comportamento ou alguma regra de negócio para um componente que gera um atributo para esse componente.
+    
+    Componente: Gera uma tag html e um código específico dele
+    [] Operador de atribuição do angular 
+    -->
+  <tr *ngFor="let tarefa of tarefas" [class.table-success]="!tarefa.concluida">   
+    <td>
+      {{tarefa.name}}
+    </td>
+    <td style="width: 70px" class="text-center">
+        <input type="checkbox" [value]="tarefa.id" [checked]="tarefa.concluida">
+    </td>
+    <td class="text-center" style="width: 100px;padding: 5px;">
+        <a 
+          title="Editar" alt="Editar"
+          class="btn btn-sm btn-outline-info">
+          <i class="fa-solid fa-pencil"></i> Editar
+      </a>
+    </td>
+    <td class="text-center" style="width: 100px;padding: 5px;">
+      <a href="#" title="Remover" alt="Remover"           
+          class="btn btn-sm btn-outline-danger">
+          <i class="fa-solid fa-trash"></i> Remover
+      </a>
+    </td>  
+  </tr>
+   <tbody>
+</table>
+
+<p *ngIf="tarefas.length==0">Nenhuma tarefa cadastrada.</p>
