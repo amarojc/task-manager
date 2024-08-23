@@ -1,0 +1,8 @@
+.form-cad-tarefa{
+    padding:5px;
+}
+
+.row-cad-tarefa{
+    display: flex;
+    justify-content: right;
+}
