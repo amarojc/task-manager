@@ -13,7 +13,8 @@ import { TarefasModule } from './tarefas';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TarefasModule
 
   ],
   providers: [],
