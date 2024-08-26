@@ -27,4 +27,12 @@ export class ListarTarefaComponent implements OnInit {
       this.tarefas = this.tarefaService.findAll();
     }
   }
+
+  //Não tem a necessidade de utilizar o evento ($event) devido esta trabalhando com checkbox
+  updateStatus(tarefa: Tarefa): void {
+    if(confirm('Deseja atualizar o status da tarefa "' + tarefa.name + '"?')){
+      this.tarefaService.statusUpdate(tarefa.id);
+      this.tarefas = this.tarefaService.findAll();
+    }
+  }
 }
