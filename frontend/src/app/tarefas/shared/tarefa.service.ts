@@ -56,7 +56,7 @@ export class TarefaService {
     //Filter -> Itera na lista e retorna apenas o que estiver dentro da condição.
     //Atualizo a lista de tarefas sem a tarefa com o id informado no parâmetro.
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
-    localStorage["tarefa"] = JSON.stringify(tarefas);
+    localStorage["tarefas"] = JSON.stringify(tarefas);
   }
 
   //Atualizando o status da tarefa
