@@ -22,7 +22,9 @@
     Componente: Gera uma tag html e um código específico dele
     [] Operador de atribuição do angular 
     -->
-  <tr *ngFor="let tarefa of tarefas" [class.table-success]="!tarefa.concluida">   
+  <tr *ngFor="let tarefa of tarefas"
+     [tarefaConcluida]="tarefa.concluida" 
+     [class.table-success]="!tarefa.concluida">   
     <td>
       {{tarefa.name}}
     </td>
